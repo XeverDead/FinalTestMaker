@@ -74,6 +74,11 @@ namespace Core
                 TasksAndTopics = tasksAndTopics
             };
 
+            if (testView.TasksAndTopics.Count == 0)
+            {
+                wasTestLoaded = false;
+            }
+
             return testView;
         }
 
