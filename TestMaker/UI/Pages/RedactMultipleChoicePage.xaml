@@ -1,0 +1,61 @@
+﻿<Page x:Class="UI.Pages.RedactMultipleChoicePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:UI.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="800"
+      Title="RedactMultipleChoicePage">
+
+    <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="QuestionGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="5*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="QuestionBlockHeader" Text="Enter task question" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="QuestionTextBox" Grid.Row="1"></TextBox>
+            <Button x:Name="SetQuestionButton" Content="Set question" Grid.Row="2"></Button>
+        </Grid>
+        <Grid x:Name="OptionGrid" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.2*" />
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="1.2*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="OptionBlockHeader" Text ="Select options from the list and enter its text" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <ComboBox x:Name="OptionsList" Text="Select option" Grid.Row="1"></ComboBox>
+            <TextBox x:Name="OptionTextBox" Grid.Row="2"></TextBox>
+            <UniformGrid x:Name="OptionButtonsGrid" Columns="2" Grid.Row="3">
+                <Button x:Name="SetOptionButton" Content="Set option"></Button>
+                <Button x:Name="DeleteOptionButton" Content="Delete option"></Button>
+            </UniformGrid>
+            <TextBlock x:Name="RightOptionsHeader" Text="Select right answers" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <Expander x:Name="RightOptionsExpander" Grid.Row="5">
+                <ScrollViewer>
+                    <WrapPanel x:Name="RightOptionsSelector"></WrapPanel>
+                </ScrollViewer>
+            </Expander>
+        </Grid>
+        <Grid x:Name="MarkGrid" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock x:Name="MarkHeader" Text="Enter mark for right answer" VerticalAlignment="Center" HorizontalAlignment="Center"></TextBlock>
+            <TextBox x:Name="MarkTextBox" Grid.Row="1"></TextBox>
+            <Button x:Name="SetMarkButton" Grid.Row="2" Content="Set mark"></Button>
+        </Grid>
+    </Grid>
+</Page>
